@@ -17,15 +17,12 @@ export function Bounded({
   return (
     <Comp
       className={clsx(
-        // Default padding
-        "px-2 py-12",
-        // If follows .header, apply larger top padding
-        "[.header+&]:pt-44 md:[.header+&]:pt-32",
+        "px-6 ~py-10/16 [.header+&]:pt-44 [.header+&]:md:pt-32",
         className
       )}
       {...restProps}
     >
-      <div className="mx-auto w-full max-w-6xl ">{children}</div>
+      <div className="mx-auto w-full max-w-6xl">{children}</div>
     </Comp>
   );
 }
