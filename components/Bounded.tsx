@@ -1,0 +1,31 @@
+import { CSSProperties, ElementType, ReactNode } from "react";
+import clsx from "clsx";
+
+type BoundedProps = {
+  as?: ElementType;
+  className?: string;
+  style?: CSSProperties;
+  children: ReactNode;
+};
+
+export function Bounded({
+  as: Comp = "section",
+  className,
+  children,
+  ...restProps
+}: BoundedProps) {
+  return (
+    <Comp
+      className={clsx(
+        // Default padding
+        "px-2 py-12",
+        // If follows .header, apply larger top padding
+        "[.header+&]:pt-44 md:[.header+&]:pt-32",
+        className
+      )}
+      {...restProps}
+    >
+      <div className="mx-auto w-full max-w-6xl ">{children}</div>
+    </Comp>
+  );
+}
