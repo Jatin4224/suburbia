@@ -6,6 +6,7 @@ import { Bounded } from "@/components/Bounded";
 import clsx from "clsx";
 import { Heading } from "@/components/Heading";
 import { ButtonLink } from "@/components/ButtonLink";
+import ParallaxImage from "./ParallaxImage";
 
 /**
  * Props for `TextAndImage`.
@@ -50,8 +51,10 @@ const TextAndImage: FC<TextAndImageProps> = ({ slice }) => {
             </ButtonLink>
           </div>
         </div>
-        {/* <PrismicNextImage field={slice.primary.background_image} /> */}
-        <PrismicNextImage field={slice.primary.foreground_image} />
+        <ParallaxImage
+          foregroundImage={slice.primary.foreground_image}
+          backgroundImage={slice.primary.background_image}
+        />
       </div>
     </Bounded>
   );
