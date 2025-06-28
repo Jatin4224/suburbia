@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import { PrismicNextImage } from "@prismicio/next";
+
 import { Bounded } from "@/components/Bounded";
 import clsx from "clsx";
 import { Heading } from "@/components/Heading";
@@ -28,7 +28,7 @@ const TextAndImage: FC<TextAndImageProps> = ({ slice, index }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className={clsx(
-        "sticky top-[calc(var(--index)*2rem)]",
+        "sticky top-[calc(var(--index)*2rem)] will-change-transform",
         theme === "Blue" && "bg-texture bg-brand-blue text-white",
         theme === "Orange" && "bg-texture bg-brand-orange text-white",
         theme === "Navy" && "bg-texture bg-[#465865] text-white",
