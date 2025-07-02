@@ -5,6 +5,7 @@ import { Logo } from "./Logo";
 import { Bounded } from "./Bounded";
 import { FooterPhysics } from "./FooterPhysics";
 import { asImageSrc } from "@prismicio/client";
+import { SlideIn } from "./Slide-In";
 
 type Props = {};
 
@@ -35,18 +36,20 @@ export async function Footer({}: Props) {
         {/* Logo */}
         <Logo className="pointer-events-none relative   mix-blend-exclusion h-20 md:h-28" />{" "}
       </div>
-      <Bounded as="nav">
-        <ul className="flex flex-wrap justify-center gap-8 ~text-lg/xl">
-          {settings.data.navigation.map((item) => (
-            <li
-              key={item.link.text}
-              className="hover:underline hover:scale-105"
-            >
-              <PrismicNextLink field={item.link} />
-            </li>
-          ))}
-        </ul>
-      </Bounded>
+      <SlideIn>
+        <Bounded as="nav">
+          <ul className="flex flex-wrap justify-center gap-8 ~text-lg/xl">
+            {settings.data.navigation.map((item) => (
+              <li
+                key={item.link.text}
+                className="hover:underline hover:scale-105"
+              >
+                <PrismicNextLink field={item.link} />
+              </li>
+            ))}
+          </ul>
+        </Bounded>
+      </SlideIn>
     </footer>
   );
 }
