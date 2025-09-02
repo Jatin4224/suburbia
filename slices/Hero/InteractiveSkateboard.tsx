@@ -1,6 +1,7 @@
 "use client";
 
-import { Environment, OrbitControls } from "@react-three/drei";
+import { Skateboard } from "@/components/Skateboard";
+import { ContactShadows, Environment, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense } from "react";
 
@@ -31,11 +32,9 @@ function Scene() {
       {/* //render cube */}
       <OrbitControls />
       <Environment files={"/hdr/warehouse-256.hdr"} />
-      <mesh>
-        <meshStandardMaterial />
 
-        <boxGeometry />
-      </mesh>
+      <Skateboard />
+      <ContactShadows opacity={0.6} position={[0, -0.8, 0]} />
     </group>
   );
 }

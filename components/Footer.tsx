@@ -7,7 +7,7 @@ import { FooterPhysics } from "./FooterPhysics";
 import { asImageSrc } from "@prismicio/client";
 import { SlideIn } from "./Slide-In";
 
-type Props = {};
+type Props = Record<string, never>;
 
 export async function Footer({}: Props) {
   //calling settings
